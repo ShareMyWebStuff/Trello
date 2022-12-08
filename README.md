@@ -1,16 +1,13 @@
 # Trello
 
-A clone of Trello using React as the frontend, express as the backend. The darta is persisted in a mySQL database and the project is written in Typescript.
+A clone of Trello using React as the frontend, express as the backend. The data is persisted in a mySQL database and the project is written in Typescript.
 
-Clone the repo and setup a mySQL database.
-
-Enter the database connection details in the .env.local file
-Rename the .env.local file to .env
+This trello clone has a hardcoded board which the lists are displayed in.
 
 ## Setup
 
 1. Create a mySQL database
-2. Create the tables listed below **listed below**
+2. Create the tables **listed below**
 3. Insert the board we use **listed below**
 4. Clone the repository
 5. Install packages **listed below**
@@ -84,8 +81,8 @@ npm start
 
 Start the backend
 
-cd server
-npm run dev
+    cd server
+    npm run dev
 
 Start the front end
 cd client
