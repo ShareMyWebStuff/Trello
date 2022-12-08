@@ -1,0 +1,14 @@
+.TrelloList-container {
+    /* display: inline-block; */
+    background-color: #ddd;
+    margin: 0 4px 50px 12px;
+    padding: 4px;
+    width: 280px;
+    border-radius: 4px;
+    min-height: 32px;
+}
+
+header {
+    padding: 10px 36px 10px 8px;
+
+}
