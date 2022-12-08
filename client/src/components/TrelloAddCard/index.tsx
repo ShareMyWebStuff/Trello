@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { useAppDispatch } from '../../app/hooks';
-import {addList} from '../../features/board/boardSlice'
+import {addCard} from '../../features/board/boardSlice'
 import './TrelloAddCard.css'
 
 
@@ -31,7 +31,7 @@ export const TrelloAddCard: React.FC<{listId: number}> = ( {listId}) => {
             })
 
             if ( createCard.status === 201) {
-                dispatch(addList(createCard.data))
+                dispatch(addCard( {listId, cardId: createCard.data.cardId, title: cardName, description: '' }) )
 
                 setIsFocused(false)
                 setCardName('')
@@ -47,7 +47,8 @@ export const TrelloAddCard: React.FC<{listId: number}> = ( {listId}) => {
 
     return (<div  onClick={()=> {setIsFocused(true)}} className="TrelloAddCard-container" data-test="addList">
         <form>
-            { isFocused ? <div><input autoFocus type="text" value={cardName} onChange={(e) =>setCardName (e.target.value)} ></input>
+            { isFocused ? <div>
+                <input autoFocus type="text" value={cardName} onChange={(e) =>setCardName (e.target.value)} ></input>
             <div className=''>
                 <button onClick={(e) => {e.preventDefault(); saveList()}} >Add card</button>
                 <button onClick={(e) => {e.stopPropagation(); setIsFocused(false)}}  className=''>Cancel</button>
