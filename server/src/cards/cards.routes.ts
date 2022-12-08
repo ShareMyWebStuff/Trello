@@ -55,16 +55,9 @@ router.post ('/', async (req, res) => {
 
             // Create the card
             if ( noErrors === 0){
-                const res = await createCard (listId, 1, title, description)
+                const resp = await createCard (listId, 1, title, description)
 
-                if (res.affectedRows === 0) {
-                    noErrors++;
-                    errorMsgs['msg'] = 'There was an issue creating the card.';
-                }
-            }
-
-            if ( noErrors === 0 ) {
-                res.status(201).json({msg: `Created card (${title})` })
+                res.status(201).json(resp)
             } else {
                 res.status(422).json({...errorMsgs})
             }

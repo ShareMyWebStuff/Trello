@@ -38,9 +38,9 @@ export const createCard = async (listId: number, boardId: number, title: string,
 
     try {
         const sql = `INSERT INTO trello_card (list_id, board_id, title, description) VALUES ( ${listId}, ${boardId}, '${title}', '${description}');`
-        const res = await runSQL<{affectedRows: number}>(sql, [])
+        const res = await runSQL<{insertId: number}>(sql, [])
 
-        return res
+        return {cardId: res.insertId}
     } catch (err) {
         if (err instanceof(Error)) {
             throw err

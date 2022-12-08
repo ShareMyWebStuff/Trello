@@ -29,6 +29,7 @@ export const TrelloAddCard: React.FC<{listId: number}> = ( {listId}) => {
                 return true
                 },
             })
+            console.log (createCard)
 
             if ( createCard.status === 201) {
                 dispatch(addCard( {listId, cardId: createCard.data.cardId, title: cardName, description: '' }) )

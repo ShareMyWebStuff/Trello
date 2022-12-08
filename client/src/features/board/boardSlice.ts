@@ -62,13 +62,16 @@ export const boardSlice = createSlice({
       state.lists.push({ ...action.payload, cards: []});
     },
     addCard: (state, action: PayloadAction<{listId: number; cardId: number,  title: string, description: string}>) => {
-
       state.lists.forEach ( list => {
         if ( list.listId === action.payload.listId) {
           list.cards.push ({cardId: action.payload.cardId, title: action.payload.title, description: action.payload.description})
         }
       })
-
+    },
+    deleteCard: (state, action: PayloadAction<{cardId: number}>) => {
+      state.lists = state.lists.map ( list => {
+        return ({listId: list.listId, listName:list.listName, cards: list.cards.filter( card => card.cardId !== action.payload.cardId)})
+      })
     },
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,
@@ -91,6 +94,6 @@ export const boardSlice = createSlice({
 });
 
 
-export const { addList, addCard } = boardSlice.actions;
+export const { addList, addCard, deleteCard } = boardSlice.actions;
 
 export default boardSlice.reducer;
