@@ -8,7 +8,24 @@
     min-height: 32px;
 }
 
-header {
+.list-header {
     padding: 10px 36px 10px 8px;
+    position: relative;
+}
 
+.list-delete-btn {
+    position: absolute;
+    right: 10px;
+    /* position: absolute;
+    top: 10px;
+    right: 10px; */
+}
+
+.list-delete-hide {
+    display: none;
+}
+
+.list-delete-btn:hover {
+    cursor: pointer;
+    font-weight: bold;
 }
