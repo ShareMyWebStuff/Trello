@@ -17,8 +17,34 @@ main {
   background-image: url('./background-img.jpg');
   background-size: cover;
   background-position: center !important;
-  height: 90vh;
+  height: 100vh;
   overflow-x: scroll;
   /* height: 85vh; */
 }
 
+input {
+  padding: 4px;
+  width: 95%;
+  margin-bottom: 5px;
+}
+
+textarea {
+  padding: 4px;
+width: 95%;
+resize: none;
+}
+
+.add-btn {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #141464;
+  color: white;
+}
+
+.cancel-btn {
+  padding: 5px;
+  border-radius: 5px;
+  background-color: #ef4136;
+  color: white;
+  margin-left: 5px;
+}
