@@ -69,15 +69,7 @@ Running the server tests is performed from the server directory, run the followi
 
     npm run test
 
-## Run Project
-
-From the server directory run
-npm run dev
-
-From the client directory run
-npm start
-
-## Run the application
+## Run the Application
 
 Start the backend
 
@@ -85,8 +77,9 @@ Start the backend
     npm run dev
 
 Start the front end
-cd client
-npm start
+
+    cd client
+    npm start
 
 ## Backend Routes
 
